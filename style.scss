@@ -1,0 +1,79 @@
+@media (max-width: 768px) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-image: url('./assets/background.JPG');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    }
+    .main {
+        position: relative; /* Ensures .gifs can be positioned relative to it */
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+
+
+    .pic {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        margin: 20px;
+    }
+
+    .pic:nth-child(odd) {
+        align-self: flex-start;
+        margin-left: 20px;
+    }
+
+    .pic:nth-child(even) {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    
+    .final {
+        align-self: center !important; /* Centers the image */
+        margin: 10px auto !important; /* Adds a 10px margin on all sides */
+        width: 80% !important; /* Makes it responsive */
+        max-width: 300px !important; /* Prevents it from getting too large */
+        height: auto !important; /* Keeps the aspect ratio */
+        display: block; /* Ensures proper centering */
+    }
+
+    .gifs {
+        position: absolute; /* Overlay within .main */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Will automatically match .main's height */
+        pointer-events: none; /* So the GIFs don't block interactions with images */
+        z-index: 10; /* Ensure they appear on top */
+    }
+    
+    .gif {
+        position: absolute; /* For random placement */
+        width: 100px; /* Adjust as needed */
+        height: auto;
+        margin: 15px;
+    }
+    
+    
+    /* Example animation to make GIFs move slightly */
+    @keyframes float {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-10px);
+        }
+    }
